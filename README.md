@@ -4,6 +4,9 @@
 Programming Language : Java<br/>
 Build tool: Gradle<br/>
 Unit testing: JUnit5<br/>
+System requirement: JDK 1.8 or above
+
+>Note: You don't need to install any project dependency as repository has gradle wrapper to handle it. 
 
 ## Project structure:
 1. **constants:** Project related constants including error messages, output messages, command constants and regex
@@ -16,14 +19,20 @@ Unit testing: JUnit5<br/>
 8. **service:** contains business logic classes for ParkingLot system
 9. **strategy:** contains project strategies currently having Parking strategy
 10. **utils:** contains utility methods for reading the file
-11 **Main.java** contains main method to run the project
+11. **Main.java** contains main method to run the project
  
 
 ## Commands to run project:
-Please update the relative path of the input file in the below command
+Please update the absolute path of the input file in the below command
 ```
 gradlew build
 gradlew run --args "H:\Workspaces\intelliJ\parkinglot_system\src\main\resources\input.txt"
+```
+
+## Command to run project using Jar file
+Please update the absolute path of the input file in the below command
+```
+java -jar parkinglot_system-1.0-SNAPSHOT.jar "H:\Workspaces\intelliJ\parkinglot_system\src\main\resources\input.txt"
 ```
 
 ## Commands to run unit test:
