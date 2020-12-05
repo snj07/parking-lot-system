@@ -1,0 +1,23 @@
+park KA-01-HH-1234 driver_age 21
+create_parking_lot 6
+park PB-01-HA-1234 driver_age 24
+park PB-01-HB-1234 driver_age 24
+park PB-01-HC-1234 driver_age 21
+park PB-01-HD-1234 driver_age 21
+park PB-01-HE-1234 driver_age 21
+park PB-01-HF-1234 driver_age 21
+slot_numbers_for_driver_of_age 22
+park PB-01-TG-2341 driver_age 40
+slot_number_for_car_with_number PB-01-HH-1234
+leave 3
+park PB-01-TG-2341 driver_age 41
+park PB-01-TG-1341 driver_age 42
+slot_number_for_car_with_number PB-01-HB-1234
+park PB-01-HB-1234
+park PB-01-HF-1234 driver_age 21
+leave 1
+park PB-01-HF-1234 driver_age 21
+vehicle_registration_number_for_driver_of_age 21
+slot_numbers_for_driver_of_age 21
+slot_numbers_for_driver_of_age 24
+create_parking_lot 6
