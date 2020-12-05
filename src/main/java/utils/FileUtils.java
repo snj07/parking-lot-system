@@ -16,6 +16,24 @@ import java.nio.file.Paths;
  */
 public class FileUtils {
 
+    /**
+     * Utility method for creating console output like string from an String object
+     *
+     * @param output - input string
+     * @return -  expected console output string
+     */
+    public static String buildExpectedString(String output) {
+        StringWriter expectedStringWriter = new StringWriter();
+        PrintWriter printWriter = new PrintWriter(expectedStringWriter);
+        String[] strArr = output.split("\n");
+        if (strArr.length == 0) return "";
+        for (String s : strArr) {
+            printWriter.println(s);
+        }
+        printWriter.close();
+        return expectedStringWriter.toString();
+    }
+
     public String readFile(String filePath) {
         Path path = Paths.get(filePath);
         if (path.isAbsolute()) {
@@ -50,7 +68,6 @@ public class FileUtils {
         return readFile(path);
 
     }
-
 
     public String readFile(Path filePath) {
         if (filePath == null) {
@@ -91,23 +108,5 @@ public class FileUtils {
         }
         return sb.toString();
 
-    }
-
-    /**
-     * Utility method for creating console output like string from an String object
-     *
-     * @param output - input string
-     * @return -  expected console output string
-     */
-    public static String buildExpectedString(String output) {
-        StringWriter expectedStringWriter = new StringWriter();
-        PrintWriter printWriter = new PrintWriter(expectedStringWriter);
-        String strArr[] = output.split("\n");
-        if (strArr.length == 0) return "";
-        for (String s : strArr) {
-            printWriter.println(s);
-        }
-        printWriter.close();
-        return expectedStringWriter.toString();
     }
 }

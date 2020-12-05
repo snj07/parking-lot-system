@@ -9,8 +9,8 @@ import utils.FileUtils;
  */
 public class FileInputController extends InputController {
 
-    private FileUtils fileUtils;
-    private String filePath;
+    private final FileUtils fileUtils;
+    private final String filePath;
 
     public FileInputController(CommandController commandController, String filePath) {
         super(commandController);

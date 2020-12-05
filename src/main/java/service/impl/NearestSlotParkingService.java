@@ -17,8 +17,8 @@ import java.util.stream.Collectors;
  * This class contains business logic method of parking system based on Nearest-Slot-Parking
  */
 public class NearestSlotParkingService implements ParkingLotService {
-    private ParkingLotDataHandler parkingLotDataHandler;
     private static NearestSlotParkingService instance;
+    private ParkingLotDataHandler parkingLotDataHandler;
 
     private NearestSlotParkingService() {
 
@@ -41,7 +41,7 @@ public class NearestSlotParkingService implements ParkingLotService {
             throw new ParkingSystemException(ErrorCode.PARKING_LOT_ALREADY_EXIST.getMessage(), ErrorCode.PARKING_LOT_ALREADY_EXIST);
         if (capacity <= 0) {
             throw new ParkingSystemException(String.format(ErrorCode.INVALID_PARKING_LOT_SIZE.getMessage(),
-                    String.valueOf(capacity)), ErrorCode.INVALID_PARKING_LOT_SIZE);
+                    capacity), ErrorCode.INVALID_PARKING_LOT_SIZE);
         }
         try {
             ParkingStrategy parkingStrategy = new NearestSlotParkingStrategy();

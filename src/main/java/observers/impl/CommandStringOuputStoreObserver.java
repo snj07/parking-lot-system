@@ -6,7 +6,7 @@ import observers.CommandObserver;
  * CommandController observer for storing the output of the commands (for testing)
  */
 public class CommandStringOuputStoreObserver implements CommandObserver {
-    private StringBuilder stringBuilder;
+    private final StringBuilder stringBuilder;
 
     public CommandStringOuputStoreObserver() {
         stringBuilder = new StringBuilder();

@@ -1,6 +1,7 @@
 package model;
 
 import java.util.Objects;
+
 /**
  * Vehicle data model for storing vehicle's data
  */

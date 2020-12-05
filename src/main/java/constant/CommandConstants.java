@@ -19,7 +19,7 @@ public class CommandConstants {
     public static final String VEHICLE_REGISTRATION_NUMBERS_FOR_DRIVER_OF_AGE = "vehicle_registration_number_for_driver_of_age";
 
     // regex mapping for all the commands
-    static private Map<String, String> commandsPatternMap = new HashMap<>();
+    static private final Map<String, String> commandsPatternMap = new HashMap<>();
 
     static {
         commandsPatternMap.put(CommandConstants.CREATE_PARKING_LOT, "(create_parking_lot) (\\d+)");

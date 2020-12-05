@@ -18,11 +18,22 @@ import java.util.stream.Collectors;
  */
 public class InMemoryParkingLotHandler implements ParkingLotDataHandler {
 
-    private ParkingStrategy parkingStrategy;
-    private Map<Integer, Vehicle> parkingDataMap;
-    private ReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock();
-
     private static InMemoryParkingLotHandler instance = null;
+    private final ParkingStrategy parkingStrategy;
+    private final Map<Integer, Vehicle> parkingDataMap;
+    private final ReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock();
+
+    /**
+     * Private constructor for singleton instance of class
+     *
+     * @param parkingStrategy - Parking strategy for parking of vehicles
+     * @param capacity        - capacity of parking lot
+     */
+    private InMemoryParkingLotHandler(ParkingStrategy parkingStrategy, int capacity) {
+        this.parkingStrategy = parkingStrategy;
+        this.parkingDataMap = new HashMap<>();
+        this.addSlotsToParkingLot(capacity);
+    }
 
     /**
      * Method to create singleton instance
@@ -40,18 +51,6 @@ public class InMemoryParkingLotHandler implements ParkingLotDataHandler {
             }
         }
         return instance;
-    }
-
-    /**
-     * Private constructor for singleton instance of class
-     *
-     * @param parkingStrategy - Parking strategy for parking of vehicles
-     * @param capacity        - capacity of parking lot
-     */
-    private InMemoryParkingLotHandler(ParkingStrategy parkingStrategy, int capacity) {
-        this.parkingStrategy = parkingStrategy;
-        this.parkingDataMap = new HashMap<>();
-        this.addSlotsToParkingLot(capacity);
     }
 
     private void addSlotsToParkingLot(int capacity) {
@@ -102,7 +101,7 @@ public class InMemoryParkingLotHandler implements ParkingLotDataHandler {
         try {
             reentrantReadWriteLock.writeLock().lock();
             if (!parkingDataMap.containsKey(slot)) {
-                throw new ParkingSystemException(String.format(ErrorCode.INVALID_SLOT_TO_LEAVE.getMessage(), Integer.toString(slot)), ErrorCode.INVALID_SLOT_TO_LEAVE);
+                throw new ParkingSystemException(String.format(ErrorCode.INVALID_SLOT_TO_LEAVE.getMessage(), slot), ErrorCode.INVALID_SLOT_TO_LEAVE);
             }
             Vehicle vehicle = parkingDataMap.remove(slot);
             parkingStrategy.addSlot(slot);

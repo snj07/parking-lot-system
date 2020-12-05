@@ -5,13 +5,13 @@ package strategy;
  */
 public interface ParkingStrategy {
 
-    public void addSlot(int slot);
+    void addSlot(int slot);
 
-    public int getFreeSlot();
+    int getFreeSlot();
 
-    public int getFreeSlotCount();
+    int getFreeSlotCount();
 
-    public boolean removeSlot(int slot);
+    boolean removeSlot(int slot);
 
 
 }

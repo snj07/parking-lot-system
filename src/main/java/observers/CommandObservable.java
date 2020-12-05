@@ -5,9 +5,9 @@ package observers;
  */
 public interface CommandObservable {
 
-    public boolean addObserver(CommandObserver observer);
+    boolean addObserver(CommandObserver observer);
 
-    public boolean removeObserver(CommandObserver observer);
+    boolean removeObserver(CommandObserver observer);
 
-    public void notifyObserver(String message);
+    void notifyObserver(String message);
 }

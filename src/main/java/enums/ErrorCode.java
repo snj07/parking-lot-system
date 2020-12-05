@@ -17,12 +17,12 @@ public enum ErrorCode {
     PARKING_LOT_ALREADY_EXIST(ErrorMessage.PARKING_LOT_ALREADY_EXIST),
     SOME_ERROR_OCCURRED(ErrorMessage.SOME_ERROR_OCCURRED);
 
-    private String message;
+    private final String message;
 
     /**
      * @param message : The error message
      */
-    private ErrorCode(String message) {
+    ErrorCode(String message) {
         this.message = message;
     }
 

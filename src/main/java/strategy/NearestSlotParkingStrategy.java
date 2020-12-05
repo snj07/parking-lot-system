@@ -6,7 +6,7 @@ import java.util.TreeSet;
  * Parking Strategy for handling allocation or de-allocation of slot
  */
 public class NearestSlotParkingStrategy implements ParkingStrategy {
-    private TreeSet<Integer> freeSlots;
+    private final TreeSet<Integer> freeSlots;
 
     public NearestSlotParkingStrategy() {
         freeSlots = new TreeSet<Integer>();

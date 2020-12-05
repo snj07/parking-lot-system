@@ -10,18 +10,18 @@ import java.util.List;
 public interface ParkingLotDataHandler {
 
 
-    public int parkVehicle(Vehicle vehicle);
+    int parkVehicle(Vehicle vehicle);
 
-    public Vehicle leaveParkingLot(int slot);
+    Vehicle leaveParkingLot(int slot);
 
-    public List<Vehicle> getAllVehiclesParkedByDriverOfAge(int age);
+    List<Vehicle> getAllVehiclesParkedByDriverOfAge(int age);
 
-    public Integer getVehicleParkingSlotNumber(String registrationNumber);
+    Integer getVehicleParkingSlotNumber(String registrationNumber);
 
-    public List<Integer> getAllSlotsParkedByDriverOfAge(int age);
+    List<Integer> getAllSlotsParkedByDriverOfAge(int age);
 
     /**
      * cleans the ParkingLot DAO object completely
      */
-    public void clearParkingLot();
+    void clearParkingLot();
 }

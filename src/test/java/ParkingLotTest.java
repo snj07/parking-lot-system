@@ -63,7 +63,7 @@ public class ParkingLotTest {
     }
 
     @Test
-    public void testSameVehicleParking() throws Exception {
+    public void testSameVehicleParking()   {
         nearestSlotParkingService.createParkingLot(3);
         nearestSlotParkingService.parkVehicle(new Car("KA-01-AA-1234", new Driver(21)));
         nearestSlotParkingService.parkVehicle(new Car("KA-01-AB-1234", new Driver(22)));
@@ -72,7 +72,7 @@ public class ParkingLotTest {
     }
 
     @Test
-    public void testNearestSlotParkingAfterLeave() throws Exception {
+    public void testNearestSlotParkingAfterLeave()   {
         nearestSlotParkingService.createParkingLot(6);
         nearestSlotParkingService.parkVehicle(new Car("KA-01-AA-1234", new Driver(21)));
         nearestSlotParkingService.parkVehicle(new Car("KA-01-AB-1234", new Driver(22)));
@@ -84,7 +84,7 @@ public class ParkingLotTest {
     }
 
     @Test
-    public void testCommandSet1() throws Exception {
+    public void testCommandSet1(){
 
         CommandController commandController = new CommandPatternController(nearestSlotParkingService, new CommandConsoleOutputObserver());
         commandController.runCommand("create_parking_lot 6");
@@ -111,7 +111,7 @@ public class ParkingLotTest {
     }
 
     @Test
-    public void testCommandSet2() throws Exception {
+    public void testCommandSet2()  {
 
         CommandController commandController = new CommandPatternController(nearestSlotParkingService, new CommandConsoleOutputObserver());
 

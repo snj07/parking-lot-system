@@ -21,8 +21,8 @@ import java.util.stream.Collectors;
  */
 public class CommandPatternController implements CommandController {
 
-    private ParkingLotService parkingLotService;
-    private Set<CommandObserver> commandObserverList;
+    private final ParkingLotService parkingLotService;
+    private final Set<CommandObserver> commandObserverList;
 
     public CommandPatternController(ParkingLotService parkingLotService) {
         this.parkingLotService = parkingLotService;
